@@ -1,6 +1,8 @@
 # CELO FURNITURE
 - live demo: [Celo Furniture](https://celo-furniture-react-app.vercel.app/)
-![]()
+
+  
+![](https://github.com/lypso1/celo-furniture/blob/main/Screenshot%202023-06-28%20192939.png)
 
 ## Desciption
 Celo Furniture is a web application that enables users to upload, buy, like, add to cart, and delete from cart, products in the marketplace. 
