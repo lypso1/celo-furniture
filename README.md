@@ -48,8 +48,9 @@ To run the application locally, follow these steps:
 
 ## Contributing
 - Fork this repository
-- Create a new branch for your changes: git checkout -b new-feature
-- Make your changes and commit them: git commit -m "creating new feature"
-- Push your changes to your fork: git push origin new-feature
-- Open a pull request to this repository with a description of your changes
-Please make sure that your code follows the Solidity Style Guide and the React Style Guide. You can add tests for any new features or changes, also please make the front-end more friendly. I welcome any contributions or feedback on this project!
+- Create a new branch for your changes: git checkout -b new-feature.
+- Make your changes and commit them: git commit -m "creating new feature".
+- Push your changes to your fork: git push origin new-feature.
+- Open a pull request to this repository with a description of your changes.
+  
+The code should follow the Solidity and React Style Guide. Feedbacks would be appreciated.
