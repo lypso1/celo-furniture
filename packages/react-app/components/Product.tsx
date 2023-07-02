@@ -49,7 +49,8 @@ const Product = ({id, setError, setLoading, clear }: any) => {
   const { writeAsync: addFurniture } = useAddToCart([address, Number(id)]);
 
   // Get Cart products
-  const { data: getCart }: any = useReadCart([address, id]);
+  const { data: getCart }: any = useReadCart([address, id], true);
+  const added = getCart? Number(getCart[0]) > 0 : false;
   
   const [product, setProduct] = useState<Product | null>(null);
   // Use the useContractApprove hook to approve the spending of the product's price, for the ERC20 cUSD contract
@@ -256,14 +257,6 @@ const Product = ({id, setError, setLoading, clear }: any) => {
             {address === product.owner ? (
               <div className="">
                 <button
-                  onClick={purchaseProduct}
-                  className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white"
-                >
-                  {/* Show the product price in cUSD */}
-                  Buy for {productPriceFromWei} cUSD
-                </button>
-
-                <button
                   className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white"
                   onClick={likeFurniture}>
                   Like
@@ -286,7 +279,8 @@ const Product = ({id, setError, setLoading, clear }: any) => {
                   </button>
                 
                   <button
-                    className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white"
+                    disabled={added}
+                    className="mt-4 h-14 w-full border-[1px] border-gray-500 text-black p-2 rounded-lg hover:bg-black hover:text-white disabled:hover:bg-transparent disabled:border-gray-300 disabled:text-gray-300"
                     onClick={addToCart}>
                     Add to Cart
                   </button>
